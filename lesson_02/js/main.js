@@ -20,5 +20,22 @@ console.log(lower.split(', '));
 
 console.log('Результат: ', budgetDay, 'Остаток: ', money%30);
 
+let num = '266219',
+    multip;
+    num = num.split('');
+    multip = num[0];
+    
+for (let i=1; i<num.length; i++){
+  multip *= num[i];
+}
+
+console.log(multip);
+
+multip = multip**3;
+console.log(multip);
+
+
+
+
 
 
