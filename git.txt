@@ -1,5 +1,0 @@
-git init
-git add .
-git status
-git checkout -b lesson_01 - Mеняем имя ветки
-git commit -m 'New name branch' - Коммит
