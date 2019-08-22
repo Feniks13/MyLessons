@@ -13,9 +13,9 @@ let money = +prompt('Ваш месячный доход?'),  /* Спрашива
   
 if (budgetDay > 800) {
   console.log('Высокий уровень дохода');  
-} else if (800 > budgetDay > 300) {
+} else if (800 > budgetDay && budgetDay > 300) {
   console.log('Средний уровень дохода');
-} else if (300 > budgetDay > 0) {
+} else if (300 > budgetDay && budgetDay > 0) {
   console.log('Низкий уровень дохода');
 } else {
   console.log('Что то пошло не так');
