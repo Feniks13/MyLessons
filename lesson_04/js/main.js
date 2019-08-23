@@ -20,7 +20,6 @@ showTypeof (money);
 showTypeof (income);
 showTypeof (deposit);
 
-
 function getStatusIncome() {    /* Функция уровня дохода */
   if (budgetDay > 800) {
     return('Высокий уровень дохода');  
@@ -32,7 +31,7 @@ function getStatusIncome() {    /* Функция уровня дохода */
     return('Что то пошло не так');
   }
 }
-console.log('Уровень дохода: ', getStatusIncome());
+console.log('getStatusIncome(): ', getStatusIncome());
 
 
 function getExpensesMonth() {    /* Функция возвращает сумму всех расходов за месяц */
@@ -49,17 +48,12 @@ console.log('Накопления за месяц: ', getAccumulatedMonth());
 
 
 function getTargetMonth() {   /* Функция подсчитывает за какой период будет достигнута цель */
-  return Math.ceil(mission / getAccumulatedMonth());
+  return Math.floor(mission / getAccumulatedMonth());
 }
 console.log('Цель будет достигнута за ' + getTargetMonth() + ' месяцев');
 
-//console.log(typeof(money));
-//console.log(typeof(income));
-//console.log(typeof(deposit));
-console.log(obligatory);
-console.log(cost);
-console.log(obligatory2);
-console.log(cost2);
-//console.log('Цель будет достигнута за ' + month + ' месяцев');
-console.log('Ежедневный расход составит ' + budgetDay + ' денег');
+function getSavings() {   /* Накопления за период */
+  return period * getAccumulatedMonth();
+}
+console.log('Накопления за период: ', getSavings());
 
