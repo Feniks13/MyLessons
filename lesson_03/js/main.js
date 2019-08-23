@@ -1,7 +1,10 @@
 'use strict';
-let money = +prompt('Ваш месячный доход?'),  /* Спрашиваем у пользователя “Ваш месячный доход?” и результат сохраняем в переменную money*/
-    addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую'), /* Спрашиваем у пользователя “Перечислите возможные расходы за рассчитываемый период через запятую” сохранить в переменную addExpenses, вывести в консоль в виде массива  */
-    deposit = confirm('Есть ли у вас депозит в банке?'),  /* Спрашиваем у пользователя “Есть ли у вас депозит в банке?” и сохранить данные в переменной deposit (булевое значение true/false) */
+let money = +prompt('Ваш месячный доход?'),  /* Спрашиваем “Ваш месячный доход?”*/
+    income = 'Фриланс',
+    addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую'), 
+    period = 7,
+    lower = addExpenses.toLowerCase(),
+    deposit = confirm('Есть ли у вас депозит в банке?'), /* Спрашиваем “Есть ли ...” и сохранить (булевое true/false) */
     obligatory = prompt('Какие обязательные ежемесячные расходы у вас есть?'),
     cost = +prompt('Во сколько это обойдется?'),
     obligatory2 = prompt('Какие обязательные ежемесячные расходы у вас есть?'),
@@ -21,13 +24,12 @@ if (budgetDay > 800) {
   console.log('Что то пошло не так');
 }
 
-console.log(money);
-console.log(addExpenses.split(','));
-console.log(deposit);
+console.log(typeof(money));
+console.log(typeof(income));
+console.log(typeof(deposit));
 console.log(obligatory);
 console.log(cost);
 console.log(obligatory2);
 console.log(cost2);
 console.log('Цель будет достигнута за ' + month + ' месяцев');
 console.log('Ежедневный расход составит ' + budgetDay + ' денег');
-
