@@ -12,20 +12,32 @@ let money = +prompt('Ваш месячный доход?', 40000),  /* Спра�
     mission = 100000,
     month = Math.ceil(mission / budgetMonth),  /* Округляем в большую стороную Вычисляем количество месяцев */
     budgetDay = Math.floor(budgetMonth / 30); /* Округляем в меньшую сторону. Вычисляем бюджет на день */
-  
-if (budgetDay > 800) {
-  console.log('Высокий уровень дохода');  
-} else if (800 >= budgetDay && budgetDay >= 300) {
-  console.log('Средний уровень дохода');
-} else if (300 > budgetDay && budgetDay >= 0) {
-  console.log('Низкий уровень дохода');
-} else {
-  console.log('Что то пошло не так');
-}
 
-console.log(typeof(money));
-console.log(typeof(income));
-console.log(typeof(deposit));
+let showTypeof = function(item) {   /* Функция типа данных */
+  console.log(item, typeof item);
+};
+showTypeof (money);
+showTypeof (income);
+showTypeof (deposit);
+
+function getStatusIncome() {    /* Функция уровня дохода */
+  if (budgetDay > 800) {
+    return('Высокий уровень дохода');  
+  } else if (800 >= budgetDay && budgetDay >= 300) {
+    return('Средний уровень дохода');
+  } else if (300 > budgetDay && budgetDay >= 0) {
+    return('Низкий уровень дохода');
+  } else {
+    return('Что то пошло не так');
+  }
+}
+console.log('Уровень дохода: ', getStatusIncome());
+
+
+
+//console.log(typeof(money));
+//console.log(typeof(income));
+//console.log(typeof(deposit));
 console.log(obligatory);
 console.log(cost);
 console.log(obligatory2);
