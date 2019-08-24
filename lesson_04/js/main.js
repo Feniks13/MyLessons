@@ -10,12 +10,16 @@ function text (val) {
   let textStr = typeof val;                            /* Опредиляем тип */
   if ( textStr === 'string') {                         /* Если тип Строка */
     val = val.replace(/^\s*/,'').replace(/\s*$/,'');   /* Удаляем пробелы в начале и конце строки */
-    return (val);
+    if (val.length >= 30) {                            /* Опредиляем количество символов */
+      val = val.slice(0, 30) + " ...";                 /* Если символов > 30 */
+      return (val);      
+    } else {
+      return val;
+    }
   } else {
     return ('Это не строка');                           /* Если тип не строка */
-  }
-  
+  }  
 }
 
-console.log(">" + text(v1) + "<");
+console.log(">" + text(v3) + "<");
 
