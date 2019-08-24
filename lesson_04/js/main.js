@@ -8,9 +8,7 @@ let money = +prompt('Ваш месячный доход?', 40000),  /* Спра�
     cost = +prompt('Во сколько это обойдется?', 7000),
     obligatory2 = prompt('Какие обязательные ежемесячные расходы у вас есть?', "Ипотека Кредит"),
     cost2 = +prompt('Во сколько это обойдется?', 18000),
-    //budgetMonth = money - cost - cost2,   /* Вычисляем бюджет на месяц */
     mission = 100000,
-    //month = Math.ceil(mission / getAccumulatedMonth()),  /* Округляем в большую стороную Вычисляем количество месяцев */
     budgetDay = Math.floor(getAccumulatedMonth() / 30); /* Округляем в меньшую сторону. Вычисляем бюджет на день */
 
 let showTypeof = function(item) {   /* Функция типа данных */
@@ -37,14 +35,14 @@ console.log('getStatusIncome(): ', getStatusIncome());
 function getExpensesMonth() {    /* Функция возвращает сумму всех расходов за месяц */
   return cost + cost2;
 }
-console.log('Сумма всех расходов за месяц: ', getExpensesMonth());
+//console.log('Сумма всех расходов за месяц: ', getExpensesMonth());
 
 
 function getAccumulatedMonth() {    /* Функция возвращает Накопления за месяц */
-  let accumulatedMonth;
-  return accumulatedMonth = money - getExpensesMonth();
+  let accumulatedMonth = money - getExpensesMonth(); 
+  return accumulatedMonth;
 }
-console.log('Накопления за месяц: ', getAccumulatedMonth());
+//console.log('Накопления за месяц: ', getAccumulatedMonth());
 
 
 function getTargetMonth() {   /* Функция подсчитывает за какой период будет достигнута цель */
