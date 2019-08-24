@@ -1,8 +1,15 @@
 let lang = 'ru',
-    lang2 = [['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'], ['Monday', 'Tuesday', 'Wednes­day', 'Thursday', 'Friday', 'Saturday', 'Sunday']],
     namePerson,
     ru = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'],
-    en = ['Monday', 'Tuesday', 'Wednes­day', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+    en = ['Monday', 'Tuesday', 'Wednes­day', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+    ru2 = 'ru',
+    en2 = 'en',
+    er = 'error',
+    lang2 = {
+      ru: ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'],
+      en: ['Monday', 'Tuesday', 'Wednes­day', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+      error : 'Язык не выбран'
+    };
 
     /* Переменную lang выводим через if */
 if (lang === 'ru') {
@@ -27,7 +34,7 @@ switch (lang) {
 }
 
 /* Переменную lang выводим через многомерный массив без ифов и switch */
-alert(lang2[0][4]);
+console.log(lang2[er]);
 
   /* Решение с помощью нескольких тернарных операторов, без использования if или switch */
 namePerson === 'Артём' ? console.log('Директор') : namePerson === 'Максим' ? console.log('Преподаватель') : console.log('Студент');
