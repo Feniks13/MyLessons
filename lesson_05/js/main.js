@@ -42,7 +42,12 @@ let expensesMonth = function() {
     } else {
       expenses2 = prompt('Какие обязательные ежемесячные расходы у вас есть?', "Ипотека Кредит");
     }
-    sum += +prompt('Во сколько это обойдется?', 7000);
+    let count;  /* Заношу в переменную ответ для последующей валидации */
+    do {
+      count = prompt('Во сколько это обойдется?');
+    } while (isNaN(money) || money == '' || money == null);
+    /* если ответ валиден - переводим count в тип Number */
+    sum += +count;
   }
 
   return sum;
