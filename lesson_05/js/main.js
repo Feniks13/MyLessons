@@ -16,22 +16,20 @@ let start = function() {
   } */
 
   do {
-    money = prompt('Ваш месячный доход?');
+    money = prompt('Ваш месячный доход?', 40000);
     console.log(money);    
   } while (isNaN(money) || money == '' || money == null);
 };
 
 start();
 
-
 let expenses,    
-    expenses2;
-    
+    expenses2;    
 
 let showTypeof = function(item) {   /* Функция типа данных */
   console.log(item, typeof item);
 };
-showTypeof (money);
+//showTypeof (money);
 showTypeof (income);
 showTypeof (deposit);
     
@@ -54,7 +52,7 @@ let expensesMonth = function() {
 let expensesAmount = expensesMonth();
 
 let accumulatedMonth = function() {
-  return money - (expensesAmount);            /* Функция возвращает сумму всех расходов за месяц */
+  return money - (expensesAmount);            /* Функция возвращает сумму за вычетом расходов */
 };
 
 let budgetPeriod = function() {
@@ -62,7 +60,7 @@ let budgetPeriod = function() {
 };
 
 let expensesPeroid = function() {
-  return expensesAmount * period;
+  return expensesAmount * period;             /* Накопления за период чистой прибыли */
 };
 
 let incomePeriod = function() {
@@ -79,24 +77,27 @@ let budgetDay = function() {
   }
 };
 
-
 let targetMonth = function() {
-  return Math.ceil(mission / accumulatedMonth());
+  let target = Math.ceil(mission / accumulatedMonth());
+  if (target > 0) {
+    return 'Цель будет достигнута за ' + target + ' месяцев';
+  } else {
+    return 'Цель не будет достигнута';
+  }  
 };
-
-console.log('Накопления за период: ', incomePeriod());
-console.log('Цель будет достигнута за ' + targetMonth() + ' месяцев');
 
 let getStatusIncome = function() {    /* Функция уровня дохода */
   if (budgetDay() > 800) {
-    return('Высокий уровень');  
+    return('Ваш уровень дохода: Высокий уровень');  
   } else if (800 >= budgetDay() && budgetDay() >= 300) {
-    return('Средний уровень');
+    return('Ваш уровень дохода: Средний уровень');
   } else if (300 > budgetDay() && budgetDay() >= 0) {
     return('Низкий уровень');
   } else {
-    return('Что то пошло не так');
+    return('Ваш уровень дохода: Что то пошло не так');
   }
 };
 
-console.log('Ваш уровень дохода: ', getStatusIncome());
+//console.log('Накопления за период: ', expensesPeroid());
+console.log(targetMonth());
+console.log(getStatusIncome());
