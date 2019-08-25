@@ -45,7 +45,7 @@ let expensesMonth = function() {
     let count;  /* Заношу в переменную ответ для последующей валидации */
     do {
       count = prompt('Во сколько это обойдется?');
-    } while (isNaN(money) || money == '' || money == null);
+    } while (isNaN(count) || count == '' || count == null);
     /* если ответ валиден - переводим count в тип Number */
     sum += +count;
   }
