@@ -4,8 +4,8 @@ let lang = 'ru',
     en = ['Monday', 'Tuesday', 'Wednes­day', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
     ru2 = 'ru',
     en2 = 'en',
-    er = 'error',
-    lang2 = {
+    er = 'error';
+const language = {
       ru: ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'],
       en: ['Monday', 'Tuesday', 'Wednes­day', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
       error : 'Язык не выбран'
@@ -34,7 +34,7 @@ switch (lang) {
 }
 
 /* Переменную lang выводим через многомерный массив без ифов и switch */
-console.log(lang2[er]);
+console.log(language[lang].join(', '));
 
   /* Решение с помощью нескольких тернарных операторов, без использования if или switch */
 namePerson === 'Артём' ? console.log('Директор') : namePerson === 'Максим' ? console.log('Преподаватель') : console.log('Студент');
